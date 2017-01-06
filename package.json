@@ -1,5 +1,5 @@
 {
-  "name": "adding-react-to-rails",
+  "name": "mynbagames",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -37,11 +37,13 @@
     "babel-preset-react": "^6.5.0",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
+    "react-logger": "^1.1.0",
     "react-redux": "^4.4.6",
     "react-router": "^2.4.0",
     "react-router-redux": "^4.0.4",
     "redux": "^3.6.0",
     "redux-form": "^5.2.3",
+    "redux-logger": "^2.7.4",
     "redux-thunk": "^2.1.0",
     "webpack": "^1.13.0"
   }

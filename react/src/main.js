@@ -2,14 +2,23 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App.js';
-import GameApp from './components/GameApp.js';
-import { Router, Route, browserHistory } from 'react-router'
+import configureStore from './redux/store'
+import { Provider } from 'react-redux'
+
+let initialState = {
+  todos: [{
+    id: 0,
+    completed: false,
+    text: 'Initial todo for demo purposes'
+  }]
+}
+
+let store = configureStore(initialState)
 
 $(function() {
   ReactDOM.render((
-    <Router history={browserHistory}>
-      <Route path="/" component={App}/>
-      <Route path="/games" component={GameApp}/>
-    </Router>
+    <Provider store={store}>
+      <App/>
+    </Provider>
   ), document.getElementById('app'))
 });
