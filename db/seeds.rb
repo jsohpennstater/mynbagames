@@ -36,6 +36,7 @@ while index <= 12
       stats.save
     end
   end
+  index += 1
 end
 
 
