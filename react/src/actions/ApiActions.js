@@ -12,7 +12,7 @@ export const AddLastName = (lastname) => {
   }
 }
 
-export const GetToken = () => {
+export const SearchPlayer = () => {
   return (dispatch, getState) => {
     let state = getState()
     let firstname = state.firstnameState
@@ -29,17 +29,22 @@ export const GetToken = () => {
       dispatch(NoMatch())
     },
     success: function(data) {
-      dispatch(SignInValid(data.jwt));
-      sessionStorage.setItem("token", data.jwt);
+    dispatch(PlayerInfo(data.player));
     }
   })
 
   }
 }
 
-
 export const NoMatch = () => {
   return {
     type: "ERROR"
+  }
+}
+
+export const PlayerInfo = (player) => {
+  return {
+    type: "PLAYER_INFO",
+    player
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { AddFirstName, AddLastName, GetToken, NoMatch } from '../actions/ApiActions'
+import { AddFirstName, AddLastName, SearchPlayer, NoMatch } from '../actions/ApiActions'
 import GameSearch from '../components/GameSearch'
 
 class ApiContainer extends Component {
@@ -11,6 +11,7 @@ class ApiContainer extends Component {
        handleLastName={this.props.handleLastName}
        handleSubmit={this.props.handleSubmit}
        error={this.props.error}
+       playerinfo={this.props.playerinfo}
       />
     )
   }
@@ -18,7 +19,8 @@ class ApiContainer extends Component {
 
 const mapStoreToProps = store => {
   return {
-    error: store.errorState
+    error: store.errorState,
+    playerinfo: store.playerState
   }
 }
 
@@ -33,8 +35,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(AddLastName(lastname))
     },
     handleSubmit: (event) => {
-      event.preventDefault()
-      dispatch(GetToken())
+      dispatch(SearchPlayer())
     }
   }
 }

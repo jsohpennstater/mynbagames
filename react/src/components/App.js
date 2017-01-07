@@ -12,7 +12,6 @@ class App extends Component {
 
 const mapStateToProps = store => {
   return {
-    token: store.tokenState
   }
 }
 

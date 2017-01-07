@@ -16,10 +16,10 @@ export const lastnameReducer = (state="", action) => {
   }
 }
 
-export const tokenReducer = (state=sessionStorage.getItem("token"), action) => {
+export const playerReducer = (state="", action) => {
   switch (action.type) {
-    case "TOKEN":
-      return action.token
+    case "PLAYER_INFO":
+      return action.player
     default:
       return state
   }
