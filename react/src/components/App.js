@@ -1,20 +1,25 @@
 import React, { Component } from 'react'
-import GameSearch from './GameSearch'
 import { connect } from 'react-redux'
+import ApiContainer from '../containers/ApiContainer'
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <h1>GameSearch</h1>
-        <GameSearch dispatch={this.props.dispatch}/>
-      </div>
+      <ApiContainer/>
     )
   }
 }
 
-function mapStateToProps(state) {
-  return state
+const mapStateToProps = store => {
+  return {
+    token: store.tokenState
+  }
 }
 
-export default connect(mapStateToProps)(App)
+const mapDispatchToProps = dispatch => {
+  return {
+
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

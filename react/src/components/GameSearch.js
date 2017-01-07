@@ -1,44 +1,24 @@
-import React, { Component } from 'react'
+import React from 'react';
 
-class GameSearch extends Component {
+const GameSearch = props => {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      day: "",
-      games: [],
-    };
+  let centerForm = "small-12 medium-8 medium-offset-2 large-4 large-offset-4 columns"
 
-    this.handleSelectGame = this.handleSelectGame.bind(this);
-    this.handleSelectDay = this.handleSelectDay.bind(this);
-  };
+  return (
+    <div className="row auth">
+      <form className={centerForm}>
+        <label htmlFor="firstname">First Name:</label><br />
+        <input type="text" name="firstname" onChange ={props.handleFirstName}/><br />
 
-  handleSelectGame(e) {
+        <label htmlFor="lastname">Last Name:</label><br />
+        <input type="text" name="lastname" onChange={props.handleLastName}/><br />
 
-  }
+        <input className="inline text-center button" type="submit" value="Search" onClick={props.handleSubmit}/>
+        <p className="inline error">{props.error}</p>
+      </form>
+    </div>
+  )
 
-  handleSelectDay(e) {
-  }
-
-  render() {
-    return (
-      <div className="row leaderboardstat">
-        <p>Game Search</p>
-        <div className="small-12 medium-6 columns week-selection-div">
-          <label><b>Day</b></label>
-          <select name="selectDay" onChange={this.handleSelectDay}>
-            <option key={1}> Select Day </option>
-          </select>
-        </div>
-        <div className="small-12 medium-6 end columns game-selection-div">
-          <label><b>Game</b></label>
-          <select name="selectGame" onChange={this.handleSelectGame}>
-            <option key={1}> Select Game </option>
-          </select>
-        </div>
-      </div>
-    )
-  }
 }
 
-export default GameSearch
+export default GameSearch;
