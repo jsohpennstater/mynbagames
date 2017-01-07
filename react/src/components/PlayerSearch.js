@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GameSearch = props => {
+const PlayerSearch = props => {
 
   return (
     <div className="row auth">
@@ -20,4 +20,4 @@ const GameSearch = props => {
 
 }
 
-export default GameSearch;
+export default PlayerSearch;
