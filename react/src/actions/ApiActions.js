@@ -15,8 +15,8 @@ export const AddLastName = (lastname) => {
 export const SearchPlayer = () => {
   return (dispatch, getState) => {
     let state = getState()
-    let firstname = state.firstnameState
-    let lastname = state.lastnameState
+    let firstname = state.firstnameState.trim()
+    let lastname = state.lastnameState.trim()
     let url = 'api/v1/players'
     $.ajax({
     method: 'GET',
