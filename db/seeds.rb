@@ -73,4 +73,5 @@ while index <= 12
       end
     end
   end
+  index += 1
 end
