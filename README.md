@@ -1,24 +1,20 @@
-# README
+#myNBAgames
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+myNBAgames is an app built with a light Ruby on Rails backend and a heavy React/Redux frontend. A user can search a player by his first and last name which returns the player's profile information.
 
-Things you may want to cover:
+myNBAgames creates JSON files of all current NBA players in the 2016 season using NBC's NBA website and parses each game's JSON file seeding the database with all the players.
 
-* Ruby version
 
-* System dependencies
+[myNBAgames](http://mynbagames.herokuapp.com)
 
-* Configuration
+##Built By:
+* [Jun Oh](https://github.com/jsohpennstater)
 
-* Database creation
+##Functionality:
+* Users search player by first and last name
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##Technologies:
+* [Ruby on Rails](http://rubyonrails.org/)
+* [React](https://facebook.github.io/react/)
+* [Redux](http://redux.js.org/docs/basics/UsageWithReact.html)
+*	[Heroku](http://heroku.com/)
