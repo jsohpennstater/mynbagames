@@ -1,7 +1,7 @@
 import React from 'react';
 
 const GameSearch = props => {
-  
+
   return (
     <div className="row auth">
       <label htmlFor="firstname">First Name</label><br />
@@ -12,6 +12,9 @@ const GameSearch = props => {
       <p className="inline error">{props.error}</p>
       <p> {props.playerinfo.first_name} {props.playerinfo.last_name} </p>
       <p> {props.playerinfo.team} {props.playerinfo.position} {props.playerinfo.number} </p>
+      <p> {props.playerinfo.college} {props.playerinfo.draft} </p>
+      <p> {props.playerinfo.height} {props.playerinfo.weight} </p>
+      <p> {props.playerinfo.born} {props.playerinfo.birthplace} </p>
     </div>
   )
 
