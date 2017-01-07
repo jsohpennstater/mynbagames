@@ -1,6 +1,14 @@
 import React from 'react';
+import PlayerProfile from './PlayerProfile'
 
 const PlayerSearch = props => {
+  let playerinfo = "";
+  if (props.playerinfo !== "" && props.playerinfo !== null) {
+    playerinfo =
+      <PlayerProfile
+      playerinfo={props.playerinfo}
+      />
+  }
 
   return (
     <div className="row auth">
@@ -10,11 +18,7 @@ const PlayerSearch = props => {
       <input type="text" name="lastname" onChange={props.handleLastName}/><br />
       <input className="inline text-center button" type="submit" value="Search" onClick={props.handleSubmit}/>
       <p className="inline error">{props.error}</p>
-      <p> {props.playerinfo.first_name} {props.playerinfo.last_name} </p>
-      <p> {props.playerinfo.team} {props.playerinfo.position} {props.playerinfo.number} </p>
-      <p> {props.playerinfo.college} {props.playerinfo.draft} </p>
-      <p> {props.playerinfo.height} {props.playerinfo.weight} </p>
-      <p> {props.playerinfo.born} {props.playerinfo.birthplace} </p>
+      {playerinfo}
     </div>
   )
 

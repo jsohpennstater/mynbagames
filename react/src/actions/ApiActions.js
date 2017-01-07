@@ -26,10 +26,10 @@ export const SearchPlayer = () => {
       lastname: lastname
     },
     error: function () {
-      dispatch(NoMatch())
+      dispatch(NoMatch());
     },
     success: function(data) {
-    dispatch(PlayerInfo(data.player));
+      dispatch(PlayerInfo(data.player));
     }
   })
 
