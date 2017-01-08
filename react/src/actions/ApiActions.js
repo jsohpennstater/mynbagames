@@ -17,7 +17,7 @@ export const SearchPlayer = () => {
     let state = getState()
     let firstname = state.firstnameState.trim()
     let lastname = state.lastnameState.trim()
-    let url = 'api/v1/players'
+    let url = 'api/v1/players/placeholder'
     $.ajax({
     method: 'GET',
     url: url,
