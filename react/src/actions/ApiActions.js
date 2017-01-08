@@ -42,6 +42,23 @@ export const SearchPlayer = () => {
   }
 }
 
+export const AllPlayers = () => {
+  return (dispatch, getState) => {
+    let url = 'api/v1/players'
+    $.ajax({
+    method: 'GET',
+    url: url,
+    error: function () {
+    },
+    success: function(data) {
+      debugger;
+      dispatch(Players(data.players));
+    }
+  })
+
+  }
+}
+
 export const NoMatch = (error) => {
   return {
     type: "ERROR",
@@ -53,5 +70,12 @@ export const PlayerInfo = (player) => {
   return {
     type: "PLAYER_INFO",
     player
+  }
+}
+
+export const Players = (players) => {
+  return {
+    type: "ALL_PLAYERS_INFO",
+    players
   }
 }
