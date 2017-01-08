@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { AddFirstName, AddLastName, SearchPlayer, NoMatch } from '../actions/ApiActions'
+import { AddFirstName, AddLastName, SearchPlayer, NoMatch, AllPlayers, Players } from '../actions/ApiActions'
 import PlayerSearch from '../components/PlayerSearch'
 
 class ApiContainer extends Component {
+
+  componentDidMount() {
+    this.props.allPlayers();
+  }
+
   render() {
     return (
       <PlayerSearch
@@ -12,6 +17,7 @@ class ApiContainer extends Component {
        handleSubmit={this.props.handleSubmit}
        error={this.props.error}
        playerinfo={this.props.playerinfo}
+       players={this.props.players}
       />
     )
   }
@@ -20,7 +26,8 @@ class ApiContainer extends Component {
 const mapStoreToProps = store => {
   return {
     error: store.errorState,
-    playerinfo: store.playerState
+    playerinfo: store.playerState,
+    players: store.allPlayers
   }
 }
 
@@ -36,6 +43,9 @@ const mapDispatchToProps = dispatch => {
     },
     handleSubmit: (event) => {
       dispatch(SearchPlayer())
+    },
+    allPlayers: (event) => {
+      dispatch(AllPlayers())
     }
   }
 }

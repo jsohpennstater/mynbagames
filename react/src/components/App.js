@@ -17,7 +17,6 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
   return {
-
   }
 }
 

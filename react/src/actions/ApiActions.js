@@ -1,3 +1,4 @@
+
 export const AddFirstName = (firstname) => {
   return {
     type: "FIRSTNAME_CHANGE",
@@ -42,6 +43,23 @@ export const SearchPlayer = () => {
   }
 }
 
+export const AllPlayers = () => {
+  return (dispatch, getState) => {
+    let url = 'api/v1/players'
+    $.ajax({
+    method: 'GET',
+    url: url,
+    error: function () {
+      dispatch(NoMatch("No Matches, Please Try Again!"));
+    },
+    success: function(data) {
+      dispatch(Players(data.players));
+    }
+  })
+
+  }
+}
+
 export const NoMatch = (error) => {
   return {
     type: "ERROR",
@@ -53,5 +71,12 @@ export const PlayerInfo = (player) => {
   return {
     type: "PLAYER_INFO",
     player
+  }
+}
+
+export const Players = (players) => {
+  return {
+    type: "ALL_PLAYERS_INFO",
+    players
   }
 }
