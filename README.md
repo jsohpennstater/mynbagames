@@ -18,3 +18,4 @@ myNBAgames creates JSON files of all current NBA players in the 2016 season usin
 * [React](https://facebook.github.io/react/)
 * [Redux](http://redux.js.org/docs/basics/UsageWithReact.html)
 *	[Heroku](http://heroku.com/)
+*	[Foundation](http://foundation.zurb.com/)
