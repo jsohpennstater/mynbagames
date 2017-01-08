@@ -26,19 +26,26 @@ export const SearchPlayer = () => {
       lastname: lastname
     },
     error: function () {
-      dispatch(NoMatch());
+      dispatch(NoMatch("No Matches, Please Try Again!"));
     },
     success: function(data) {
-      dispatch(PlayerInfo(data.player));
+      if (data.player !== null) {
+        dispatch(PlayerInfo(data.player));
+        dispatch(NoMatch(""));
+      } else if (data.player === null) {
+        dispatch(NoMatch("No Matches, Please Try Again!"));
+        dispatch(PlayerInfo(""));
+      }
     }
   })
 
   }
 }
 
-export const NoMatch = () => {
+export const NoMatch = (error) => {
   return {
-    type: "ERROR"
+    type: "ERROR",
+    error
   }
 }
 
