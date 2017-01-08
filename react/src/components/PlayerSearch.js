@@ -35,16 +35,20 @@ const PlayerSearch = props => {
   }
 
   return (
-    <div className="row auth">
-      <label htmlFor="firstname">First Name</label><br />
-      <input type="text" name="firstname" onChange ={props.handleFirstName}/><br />
-      <label htmlFor="lastname">Last Name</label><br />
-      <input type="text" name="lastname" onChange={props.handleLastName}/><br />
-      <input className="inline text-center button" type="submit" value="Search" onClick={props.handleSubmit}/>
-      <p className="inline error">{props.error}</p>
-      {playerinfo}
-      {names}
-      {players}
+    <div className="row playersearch">
+      <div className="small-12 medium-3 columns">
+        <label htmlFor="firstname">First Name</label>
+        <input type="text" name="firstname" onChange ={props.handleFirstName}/>
+        <label htmlFor="lastname">Last Name</label>
+        <input type="text" name="lastname" onChange={props.handleLastName}/>
+        <input className="inline text-center button" type="submit" value="Search" onClick={props.handleSubmit}/>
+        <p className="inline error">{props.error}</p>
+        {playerinfo}
+        {names}
+      </div>
+      <div className="small-12 medium-9 end columns">
+        {players}
+      </div>
     </div>
   )
 
