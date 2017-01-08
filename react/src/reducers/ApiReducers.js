@@ -28,7 +28,7 @@ export const playerReducer = (state="", action) => {
 export const errorReducer = (state="", action) => {
   switch (action.type) {
     case "ERROR":
-      return "No Matches, Please Try Again!"
+      return action.error
     default:
       return state
   }
