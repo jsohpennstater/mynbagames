@@ -10,6 +10,7 @@ const PlayerProfile = props => {
       <p> Draft: {props.playerinfo.draft} </p>
       <p> Height: {props.playerinfo.height}, Weight: {props.playerinfo.weight} </p>
       <p> Birthday: {props.playerinfo.born}, Birthplace: {props.playerinfo.birthplace} </p>
+      <img src= {props.playerinfo.image} className="player-image"/>
     </div>
   )
 

@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+ .player-image {
+   height: 50px;
+   border-radius: 50%;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+   max-width: 300px;
+   margin-top: 5px;
+   margin-bottom: 5px;
+   display: flex;
+   justify-content: left;
+ }
