@@ -1,3 +1,4 @@
+
 export const AddFirstName = (firstname) => {
   return {
     type: "FIRSTNAME_CHANGE",
@@ -49,9 +50,9 @@ export const AllPlayers = () => {
     method: 'GET',
     url: url,
     error: function () {
+      dispatch(NoMatch("No Matches, Please Try Again!"));
     },
     success: function(data) {
-      debugger;
       dispatch(Players(data.players));
     }
   })

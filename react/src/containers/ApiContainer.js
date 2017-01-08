@@ -4,6 +4,11 @@ import { AddFirstName, AddLastName, SearchPlayer, NoMatch, AllPlayers, Players }
 import PlayerSearch from '../components/PlayerSearch'
 
 class ApiContainer extends Component {
+
+  componentDidMount() {
+    this.props.allPlayers();
+  }
+
   render() {
     return (
       <PlayerSearch
@@ -12,7 +17,6 @@ class ApiContainer extends Component {
        handleSubmit={this.props.handleSubmit}
        error={this.props.error}
        playerinfo={this.props.playerinfo}
-       allPlayers={this.props.allPlayers}
        players={this.props.players}
       />
     )
