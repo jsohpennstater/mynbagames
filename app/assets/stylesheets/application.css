@@ -12,9 +12,23 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
- .player-image {
-   height: 100px;
-   display: flex;
-   justify-content: left;
- }
+.player-image {
+  margin: auto;
+  height: 95px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+  max-width: 100px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.player-display p {
+  font-size: 13px;
+  margin: 0px;
+  text-align: center;
+}
