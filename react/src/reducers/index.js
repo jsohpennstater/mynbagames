@@ -1,12 +1,11 @@
 import { combineReducers } from 'redux';
-import { firstnameReducer, lastnameReducer, playerReducer, errorReducer, allPlayersReducer } from './ApiReducers';
+import { errorReducer, allPlayersReducer, firstMatchReducer, lastMatchReducer } from './ApiReducers';
 
 let reducers = combineReducers({
-  firstnameState: firstnameReducer,
-  lastnameState: lastnameReducer,
-  playerState: playerReducer,
   errorState: errorReducer,
-  allPlayers: allPlayersReducer
+  allPlayers: allPlayersReducer,
+  firstNameMatch: firstMatchReducer,
+  lastNameMatch: lastMatchReducer
 });
 
 export default reducers;
