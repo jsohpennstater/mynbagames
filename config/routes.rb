@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root "games#index"
-  resources :games, only: [:index]
+  root "players#index"
+  resources :players, only: [:index, :show]
 
   namespace :api do
    namespace :v1 do

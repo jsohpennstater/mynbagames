@@ -1,7 +1,6 @@
 import React from 'react';
 
 const PlayerProfile = props => {
-
   return (
     <div>
       <p> {props.playerinfo.first_name} {props.playerinfo.last_name} {props.playerinfo.number} </p>
