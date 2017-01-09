@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { NoMatch, AllPlayers, Players, FirstNameMatch, LastNameMatch } from '../actions/ApiActions'
+import { NoMatch, AllPlayers, Players, NameMatch} from '../actions/ApiActions'
 import PlayerSearch from '../components/PlayerSearch'
 
 class ApiContainer extends Component {
@@ -12,13 +12,10 @@ class ApiContainer extends Component {
   render() {
     return (
       <PlayerSearch
-       handleFirstMatch={this.props.handleFirstMatch}
-       handleLastMatch={this.props.handleLastMatch}
+       handleNameMatch={this.props.handleNameMatch}
        error={this.props.error}
        playerinfo={this.props.playerinfo}
        players={this.props.players}
-       firstNameMatch={this.props.firstNameMatch}
-       lastNameMatch={this.props.lastNameMatch}
       />
     )
   }
@@ -29,8 +26,6 @@ const mapStoreToProps = store => {
     error: store.errorState,
     playerinfo: store.playerState,
     players: store.allPlayers,
-    firstNameMatch: store.firstNameMatch,
-    lastNameMatch: store.lastNameMatch
   }
 }
 
@@ -42,14 +37,10 @@ const mapDispatchToProps = dispatch => {
     allPlayers: (event) => {
       dispatch(AllPlayers())
     },
-    handleFirstMatch: (event) => {
-      let firstname = event.target.value
-      dispatch(FirstNameMatch(firstname))
-    },
-    handleLastMatch: (event) => {
-      let lastname = event.target.value
-      dispatch(LastNameMatch(lastname))
-    },
+    handleNameMatch: (event) => {
+      let name = event.target.value
+      dispatch(NameMatch(name))
+    }
   }
 }
 
