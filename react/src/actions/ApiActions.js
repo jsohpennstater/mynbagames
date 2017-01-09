@@ -15,42 +15,30 @@ export const AllPlayers = () => {
   }
 }
 
-export const FirstNameMatch = (firstname) => {
+export const NameMatch = (name) => {
   return (dispatch) => {
     let url = 'api/v1/names';
-    if (firstname.length > 1) {
+    if (name.trim().length > 1) {
       $.ajax({
         method: 'GET',
         url: url,
         data: {
-          first_name: firstname
+          name: name
         },
         error: function () {
         },
         success: function(data) {
-          dispatch(FirstMatch(data.matchingfirst));
-          dispatch(Players(data.first))
+          dispatch(Players(data.matchingname))
         }
       })
-    }
-  }
-}
-
-export const LastNameMatch = (lastname) => {
-  return (dispatch) => {
-    let url = 'api/v1/names';
-    if (lastname.length > 1) {
+    } else {
       $.ajax({
         method: 'GET',
-        url: url,
-        data: {
-          last_name: lastname
-        },
+        url: 'api/v1/players',
         error: function () {
         },
         success: function(data) {
-          dispatch(LastMatch(data.matchinglast));
-          dispatch(Players(data.last))
+          dispatch(Players(data.players))
         }
       })
     }
@@ -75,19 +63,5 @@ export const Players = (players) => {
   return {
     type: "ALL_PLAYERS_INFO",
     players
-  }
-}
-
-export const FirstMatch = (firstnamematch) => {
-  return {
-    type: "FIRST_NAME_MATCH",
-    firstnamematch
-  }
-}
-
-export const LastMatch = (lastnamematch) => {
-  return {
-    type: "LAST_NAME_MATCH",
-    lastnamematch
   }
 }
