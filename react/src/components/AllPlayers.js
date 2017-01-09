@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AllPlayers = props => {
-  let player_id = props.player.id
+  let player_id = props.player.id;
   return (
     <div className="small-12 medium-3 end columns player-display">
       <img src= {props.player.image} className="player-image"/>

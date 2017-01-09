@@ -60,6 +60,7 @@ export const FirstNameMatch = (firstname) => {
         },
         success: function(data) {
           dispatch(FirstMatch(data.matchingfirst));
+          dispatch(Players(data.first))
         }
       })
     }
@@ -81,6 +82,7 @@ export const LastNameMatch = (lastname) => {
         },
         success: function(data) {
           dispatch(LastMatch(data.matchinglast));
+          dispatch(Players(data.last))
         }
       })
     }

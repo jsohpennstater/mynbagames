@@ -14,7 +14,6 @@ class ApiContainer extends Component {
       <PlayerSearch
        handleFirstMatch={this.props.handleFirstMatch}
        handleLastMatch={this.props.handleLastMatch}
-       handleSubmit={this.props.handleSubmit}
        error={this.props.error}
        playerinfo={this.props.playerinfo}
        players={this.props.players}

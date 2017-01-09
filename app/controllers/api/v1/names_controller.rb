@@ -12,7 +12,9 @@ class Api::V1::NamesController < ApiController
 
     render json: {
     matchingfirst: @first,
-    matchinglast: @last
+    matchinglast: @last,
+    first: @firstnames,
+    last: @lastnames
     }, status: :ok
   end
 
