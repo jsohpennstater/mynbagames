@@ -1,5 +1,5 @@
 class PlayersController < ApplicationController
   def show
-    binding.pry
+    @player = Player.find_by(id: params[:id])
   end
 end

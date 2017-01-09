@@ -1,0 +1,9 @@
+<div>
+  <p> <%= @player.first_name %> <%= @player.last_name %> <% @player.number %> </p>
+  <p> Team: <%= @player.team %>, Position: <%= @player.position %> </p>
+  <p> College: <%= @player.college %> </p>
+  <p> Draft: <%= @player.draft %> </p>
+  <p> Height:  <%= @player.height %>, Weight: <%= @player.weight %> </p>
+  <p> Birthday:  <%= @player.born %>, Birthplace:  <%= @player.birthplace %> </p>
+  <p> <%= image_tag @player.image %> </p>
+</div>

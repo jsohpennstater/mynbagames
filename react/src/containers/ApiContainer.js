@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { AddFirstName, AddLastName, SearchPlayer, NoMatch, AllPlayers, Players, FirstNameMatch, LastNameMatch } from '../actions/ApiActions'
+import { NoMatch, AllPlayers, Players, FirstNameMatch, LastNameMatch } from '../actions/ApiActions'
 import PlayerSearch from '../components/PlayerSearch'
 
 class ApiContainer extends Component {

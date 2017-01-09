@@ -1,21 +1,12 @@
 import React from 'react';
-import PlayerProfile from './PlayerProfile'
 import AllPlayers from './AllPlayers'
 import Names from './Names'
 
 const PlayerSearch = props => {
-  let playerinfo = "";
   let players = "";
   let names = "";
   let matchingFirstNames = "";
   let matchingLastNames = "";
-
-  if (props.playerinfo !== "" && props.playerinfo !== null) {
-    playerinfo =
-      <PlayerProfile
-      playerinfo={props.playerinfo}
-      />
-  }
 
   if (props.players !== "" && props.players !== null) {
     players = props.players.map(Player => {
@@ -65,9 +56,6 @@ const PlayerSearch = props => {
           <datalist id='searchLastName'>
             {matchingLastNames}
           </datalist>
-        <input className="inline text-center button" type="submit" value="Search" onClick={props.handleSubmit}/>
-        <p className="inline error">{props.error}</p>
-        {playerinfo}
         {names}
       </div>
       <div className="small-12 medium-9 end columns">
