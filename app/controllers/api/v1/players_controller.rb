@@ -8,8 +8,10 @@ class Api::V1::PlayersController < ApiController
 
   def show
     @player = Player.find_by(first_name: params["firstname"], last_name: params["lastname"])
+    @stats = @player.stats
     render json: {
     player: @player,
+    stats: @stats
     }, status: :ok
   end
 end
