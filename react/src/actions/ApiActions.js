@@ -1,6 +1,6 @@
 export const AllPlayers = () => {
   return (dispatch, getState) => {
-    let url = 'api/v1/players'
+    let url = '/api/v1/players'
     $.ajax({
     method: 'GET',
     url: url,
@@ -17,7 +17,7 @@ export const AllPlayers = () => {
 
 export const NameMatch = (name) => {
   return (dispatch) => {
-    let url = 'api/v1/names';
+    let url = '/api/v1/names';
     if (name.trim().length > 1) {
       $.ajax({
         method: 'GET',
@@ -47,10 +47,9 @@ export const NameMatch = (name) => {
 
 export const PlayerInfo = (id) => {
   return (dispatch, getState) => {
-    let url = `api/v1/players/${id}`;
     $.ajax({
     method: 'GET',
-    url: url,
+    url: `/api/v1/players/${id}`,
     error: function () {
       dispatch(NoMatch("No Matches, Please Try Again!"));
     },
