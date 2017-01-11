@@ -45,17 +45,22 @@ export const NameMatch = (name) => {
   }
 }
 
-export const NoMatch = (error) => {
-  return {
-    type: "ERROR",
-    error
-  }
-}
+export const PlayerInfo = (id) => {
+  return (dispatch, getState) => {
+    let url = `api/v1/players/${id}`;
+    $.ajax({
+    method: 'GET',
+    url: url,
+    error: function () {
+      dispatch(NoMatch("No Matches, Please Try Again!"));
+    },
+    success: function(data) {
+      dispatch(Average(data.season_average));
+      dispatch(PlayerProfile(data.player));
+      dispatch(BoxScore(data.stats))
+    }
+  })
 
-export const PlayerInfo = (player) => {
-  return {
-    type: "PLAYER_INFO",
-    player
   }
 }
 
@@ -63,5 +68,33 @@ export const Players = (players) => {
   return {
     type: "ALL_PLAYERS_INFO",
     players
+  }
+}
+
+export const NoMatch = (error) => {
+  return {
+    type: "ERROR",
+    error
+  }
+}
+
+export const Average = (seasonaverage) => {
+  return {
+    type: "SEASON_AVERAGE",
+    seasonaverage
+  }
+}
+
+export const PlayerProfile = (player) => {
+  return {
+    type: "PLAYER_PROFILE",
+    player
+  }
+}
+
+export const BoxScore = (boxscore) => {
+  return {
+    type: "PLAYER_BOXSCORE",
+    boxscore
   }
 }

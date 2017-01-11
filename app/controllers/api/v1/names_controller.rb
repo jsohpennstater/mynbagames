@@ -12,7 +12,9 @@ class Api::V1::NamesController < ApiController
           @names << Player.where("first_name ilike ? or last_name ilike ?", "%#{name}%", "%#{name}%" )
         end
       end
+
       @names.flatten!
+      @names.uniq!
     end
 
     render json: {
