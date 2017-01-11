@@ -12,6 +12,7 @@ const PlayerSearch = props => {
         <AllPlayers
          key={Player.id}
          player={Player}
+         handleLink={props.handleLink}
         />
       )
     })
@@ -20,6 +21,7 @@ const PlayerSearch = props => {
         <Names
          key={Player.id}
          player={Player}
+         handleLink={props.handleLink}
         />
       )
     })

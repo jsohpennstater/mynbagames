@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { NoMatch, AllPlayers, Players, NameMatch} from '../actions/ApiActions'
+import { NoMatch, AllPlayers, Players, NameMatch, PlayerInfo, Average, PlayerProfile, BoxScore } from '../actions/ApiActions'
 import PlayerSearch from '../components/PlayerSearch'
 
-class ApiContainer extends Component {
+class PlayersContainer extends Component {
 
   componentDidMount() {
     this.props.allPlayers();
@@ -13,8 +13,8 @@ class ApiContainer extends Component {
     return (
       <PlayerSearch
        handleNameMatch={this.props.handleNameMatch}
+       handleLink={this.props.handleLink}
        error={this.props.error}
-       playerinfo={this.props.playerinfo}
        players={this.props.players}
       />
     )
@@ -38,10 +38,14 @@ const mapDispatchToProps = dispatch => {
       dispatch(AllPlayers())
     },
     handleNameMatch: (event) => {
-      let name = event.target.value
+      let name = event.target.value;
       dispatch(NameMatch(name))
+    },
+    handleLink: (event) => {
+      let id = event.target.value;
+      dispatch(PlayerInfo(id))
     }
   }
 }
 
-export default connect(mapStoreToProps, mapDispatchToProps)(ApiContainer);
+export default connect(mapStoreToProps, mapDispatchToProps)(PlayersContainer);

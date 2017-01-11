@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import ApiContainer from '../containers/ApiContainer'
+import PlayersContainer from '../containers/PlayersContainer'
+import PlayerContainer from '../containers/PlayerContainer'
+import { Router, Route, browserHistory } from 'react-router'
+
 
 class App extends Component {
   render() {
     return (
-      <ApiContainer/>
+      <Router history={browserHistory}>
+        <Route path="/" component={PlayersContainer}/>
+        <Route path="/players/:playerId" component={PlayerContainer}/>
+      </Router>
     )
   }
 }
