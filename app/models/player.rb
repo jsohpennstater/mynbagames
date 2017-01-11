@@ -10,7 +10,7 @@ class Player < ActiveRecord::Base
     stats.each do |stat|
       total += stat.points.to_i
     end
-    total.to_f / stats.length.to_f
+    (total.to_f / stats.length.to_f).round(2)
   end
 
   def assits_per_game
@@ -18,7 +18,7 @@ class Player < ActiveRecord::Base
     stats.each do |stat|
       total += stat.assist.to_i
     end
-    total.to_f / stats.length.to_f
+    (total.to_f / stats.length.to_f).round(2)
   end
 
   def rebounds_per_game
@@ -26,7 +26,7 @@ class Player < ActiveRecord::Base
     stats.each do |stat|
       total += stat.total_rebound.to_i
     end
-    total.to_f / stats.length.to_f
+    (total.to_f / stats.length.to_f).round(2)
   end
 
   def blocks_per_game
@@ -34,7 +34,7 @@ class Player < ActiveRecord::Base
     stats.each do |stat|
       total += stat.block.to_i
     end
-    total.to_f / stats.length.to_f
+    (total.to_f / stats.length.to_f).round(2)
   end
 
   def steals_per_game
@@ -42,7 +42,7 @@ class Player < ActiveRecord::Base
     stats.each do |stat|
       total += stat.steal.to_i
     end
-    total.to_f / stats.length.to_f
+    (total.to_f / stats.length.to_f).round(2)
   end
 
   def minutes_per_game
