@@ -16,10 +16,9 @@ const PlayerSearch = props => {
       )
     })
     names = props.players.map(Player => {
-      names = props.players.length
       return (
         <Names
-         key={Player.id + names}
+         key={Player.id}
          player={Player}
         />
       )
