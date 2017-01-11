@@ -5,7 +5,6 @@ import Names from './Names'
 const PlayerSearch = props => {
   let players = "";
   let names = "";
-  debugger;
 
   if (props.players !== "" && props.players !== null) {
     players = props.players.map(Player => {
