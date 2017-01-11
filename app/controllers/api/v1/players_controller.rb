@@ -7,6 +7,7 @@ class Api::V1::PlayersController < ApiController
   end
 
   def show
+    binding.pry
     @player = Player.find_by(id: params[:id])
     @stats = @player.stats
     @season_average = Hash.new
