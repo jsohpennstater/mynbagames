@@ -4,6 +4,7 @@ const BoxScore = props => {
 
   return (
     <div className="boxscore">
+      <span> Gamecode: {props.boxscore.gamecode}, </span>
       <span> Minutes Per Game: {props.boxscore.min}, </span>
       <span> Points: {props.boxscore.points}, </span>
       <span> Rebounds: {props.boxscore.total_rebound}, </span>
