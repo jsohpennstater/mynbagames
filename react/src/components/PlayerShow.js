@@ -34,8 +34,8 @@ const PlayerShow = props => {
 
   return (
     <div className="row">
-     {seasonAverage}
      {playerProfile}
+     {seasonAverage}
      {boxScore}
     </div>
   )
