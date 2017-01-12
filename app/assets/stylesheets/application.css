@@ -32,3 +32,18 @@
   margin: 0px;
   text-align: center;
 }
+
+.season-average p {
+  margin-bottom: 0px;
+}
+
+.playerprofile {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile p{
+  margin-bottom: 0px;
+}

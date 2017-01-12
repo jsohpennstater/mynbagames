@@ -3,15 +3,16 @@ import React, { Component } from 'react'
 const SeasonAverage = props => {
   return (
     <div className="season-average">
-      <p> PPG: {props.average.ppg} </p>
-      <p> RPG: {props.average.rpg} </p>
-      <p> APG: {props.average.apg} </p>
-      <p> SPG: {props.average.apg} </p>
-      <p> BPG: {props.average.apg} </p>
-      <p> MPG: {props.average.mpg} </p>
-      <p> FPG: {props.average.fgp}% </p>
-      <p> FTG: {props.average.ftp}% </p>
-      <p> THREE: {props.average.threep}% </p>
+      <p> Season Average (2016-2017) </p>
+      <span> PPG: {props.average.ppg} </span>
+      <span> RPG: {props.average.rpg} </span>
+      <span> APG: {props.average.apg} </span>
+      <span> MPG: {props.average.mpg} </span>
+      <span> SPG: {props.average.apg} </span>
+      <span> BPG: {props.average.apg} </span>
+      <span> FG%: {props.average.fgp}% </span>
+      <span> FT%: {props.average.ftp}% </span>
+      <span> 3P%: {props.average.threep}% </span>
     </div>
   )
 }

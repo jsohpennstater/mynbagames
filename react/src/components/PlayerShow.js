@@ -26,6 +26,7 @@ const PlayerShow = props => {
     boxScore = props.playerBoxScore.map(Boxscore => {
       return (
         <BoxScore
+         key={Boxscore.id}
          boxscore={Boxscore}
         />
       )
@@ -33,10 +34,18 @@ const PlayerShow = props => {
   }
 
   return (
-    <div className="row">
-     {seasonAverage}
-     {playerProfile}
-     {boxScore}
+    <div className="player-show">
+      <div className="row">
+       {playerProfile}
+      </div>
+      <br></br>
+      <div className="season-average row">
+        {seasonAverage}
+      </div>
+      <br></br>
+      <div className="row">
+        {boxScore}
+      </div>
     </div>
   )
 
