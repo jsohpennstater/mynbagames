@@ -7,7 +7,6 @@ import { Router, Route, browserHistory } from 'react-router'
 
 class App extends Component {
   render() {
-    let pathname = window.location.pathname;
     return (
       <Router history={browserHistory}>
         <Route path="/" component={PlayersContainer}/>
