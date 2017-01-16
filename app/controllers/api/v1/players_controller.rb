@@ -8,7 +8,7 @@ class Api::V1::PlayersController < ApiController
 
   def show
     @player = Player.find_by(id: params[:id])
-    @stats = @player.stats
+    @stats = @player.stats.order(gamecode: :desc)
     @season_average = Hash.new
     @season_average["ppg"] = @player.points_per_game
     @season_average["rpg"] = @player.rebounds_per_game
