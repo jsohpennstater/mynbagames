@@ -2,18 +2,35 @@ import React, { Component } from 'react'
 
 const SeasonAverage = props => {
   return (
-    <div className="season-average">
-      <p> Season Average (2016-2017) </p>
-      <span> PPG: {props.average.ppg} </span>
-      <span> RPG: {props.average.rpg} </span>
-      <span> APG: {props.average.apg} </span>
-      <span> MPG: {props.average.mpg} </span>
-      <span> SPG: {props.average.apg} </span>
-      <span> BPG: {props.average.apg} </span>
-      <span> FG%: {props.average.fgp}% </span>
-      <span> FT%: {props.average.ftp}% </span>
-      <span> 3P%: {props.average.threep}% </span>
-    </div>
+      <div className="SeasonAverage Row">
+        <p> SEASON AVERAGE (2016-2017) </p>
+          <table>
+            <thead>
+              <tr>
+                <th>PPG</th>
+                <th>RPG</th>
+                <th>APG</th>
+                <th>SPG</th>
+                <th>BPG</th>
+                <th>FG%</th>
+                <th>FT%</th>
+                <th>3P%</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td> {props.average.ppg} </td>
+                <td> {props.average.rpg} </td>
+                <td> {props.average.apg} </td>
+                <td> {props.average.apg} </td>
+                <td> {props.average.apg} </td>
+                <td> {props.average.fgp}% </td>
+                <td> {props.average.ftp}% </td>
+                <td> {props.average.threep}% </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
   )
 }
 
