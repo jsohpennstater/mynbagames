@@ -47,3 +47,23 @@
 .profile p{
   margin-bottom: 0px;
 }
+
+.boxscore-table tr {
+  text-align: center;
+}
+
+.boxscore-table th {
+  text-align: center;
+}
+
+.boxscore-table p {
+  margin-bottom: 0px;
+}
+
+.season-average tr {
+  text-align: center;
+}
+
+.season-average th {
+  text-align: center;
+}

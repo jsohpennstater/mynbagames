@@ -43,8 +43,31 @@ const PlayerShow = props => {
         {seasonAverage}
       </div>
       <br></br>
-      <div className="row">
-        {boxScore}
+      <div className="boxscore-table row">
+        <p> BOXSCORE </p>
+        <table>
+          <thead>
+            <tr>
+              <th>GAMECODE</th>
+              <th>MIN</th>
+              <th>FGM - FGA</th>
+              <th>FG%</th>
+              <th>3PM - 3PA</th>
+              <th>3P%</th>
+              <th>FTM - FTA</th>
+              <th>FT%</th>
+              <th>REB</th>
+              <th>AST</th>
+              <th>BLK</th>
+              <th>STL</th>
+              <th>TO</th>
+              <th>PTS</th>
+            </tr>
+          </thead>
+          <tbody>
+          {boxScore}
+          </tbody>
+        </table>
       </div>
     </div>
   )
