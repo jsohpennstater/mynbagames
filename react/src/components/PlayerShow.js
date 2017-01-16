@@ -42,7 +42,6 @@ const PlayerShow = props => {
       <div className="season-average row">
         {seasonAverage}
       </div>
-      <br></br>
       <div className="boxscore-table row">
         <p> BOXSCORE </p>
         <table>
