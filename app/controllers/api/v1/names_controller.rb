@@ -4,10 +4,10 @@ class Api::V1::NamesController < ApiController
       @names = []
       names = params[:name].split(" ")
       names.each do |name|
-        if Player.find_by(first_name: names[0], last_name: names[1])
-          @names << Player.find_by(first_name: names[0], last_name: names[1])
-        elsif Player.find_by(first_name: names[1], last_name: names[0])
-          @names << Player.find_by(first_name: names[1], last_name: names[0])
+        if Player.find_by(first_name: names[0].to_s.capitalize, last_name: names[1].to_s.capitalize)
+          @names << Player.find_by(first_name: names[0].to_s.capitalize, last_name: names[1].to_s.capitalize)
+        elsif Player.find_by(first_name: names[1].to_s.capitalize, last_name: names[0].to_s.capitalize)
+          @names << Player.find_by(first_name: names[1].to_s.capitalize, last_name: names[0].to_s.capitalize)
         else
           @names << Player.where("first_name ilike ? or last_name ilike ?", "#{name}%", "#{name}%" )
         end
