@@ -56,7 +56,8 @@ export const PlayerInfo = (id) => {
     success: function(data) {
       dispatch(Average(data.season_average));
       dispatch(PlayerProfile(data.player));
-      dispatch(BoxScore(data.stats))
+      dispatch(BoxScore(data.stats));
+      dispatch(Games(data.games));
     }
   })
 
@@ -95,5 +96,12 @@ export const BoxScore = (boxscore) => {
   return {
     type: "PLAYER_BOXSCORE",
     boxscore
+  }
+}
+
+export const Games = (games) => {
+  return {
+    type: "PLAYER_GAMES",
+    games
   }
 }
