@@ -17,6 +17,7 @@ const BoxScore = props => {
       <td> {props.boxscore.block} </td>
       <td> {props.boxscore.steal} </td>
       <td> {props.boxscore.turnover} </td>
+      <td> {props.boxscore.plus_minus} </td>
       <td> {props.boxscore.points} </td>
     </tr>
   )

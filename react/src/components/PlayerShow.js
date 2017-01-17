@@ -60,6 +60,7 @@ const PlayerShow = props => {
               <th>BLK</th>
               <th>STL</th>
               <th>TO</th>
+              <th>+/-</th>
               <th>PTS</th>
             </tr>
           </thead>
