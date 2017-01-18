@@ -4,7 +4,6 @@ const BoxScore = props => {
 
   return (
     <tr>
-      <td> {props.boxscore.gamecode} </td>
       <td> {props.boxscore.min} </td>
       <td> {props.boxscore.fgm} - {props.boxscore.fga} </td>
       <td> {(props.boxscore.fgm / props.boxscore.fga).toFixed(3)} </td>
