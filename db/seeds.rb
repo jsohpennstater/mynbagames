@@ -77,8 +77,8 @@ require 'json'
 # end
 
 # GAME_INFO
-index = 10
-while index < 13
+index = 1
+while index < 2
   Dir.foreach("./public/games/#{index}") do |file|
     next if file == "." or file == ".."
       game_info = File.read("./public/games/#{index}/" + file)
