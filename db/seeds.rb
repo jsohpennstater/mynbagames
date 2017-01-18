@@ -76,7 +76,7 @@ require 'json'
 #   index += 1
 # end
 
-GAME_INFO
+# GAME_INFO
 index = 10
 while index < 13
   Dir.foreach("./public/games/#{index}") do |file|
