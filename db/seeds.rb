@@ -76,24 +76,24 @@ while index < 2
   index += 1
 end
 
-# GAME_INFO
-# index = 10
-# while index < 13
-#   Dir.foreach("./public/games/#{index}") do |file|
-#     next if file == "." or file == ".."
-#       game_info = File.read("./public/games/#{index}/" + file)
-#       sorted_game_info = JSON.parse(game_info)
-#       sorted_game_info.each do |game|
-#         new_game = Game.new
-#         new_game.gamecode = game["gamecode"]
-#         new_game.away = game["away"]
-#         new_game.away_pic = game["away_picture"]
-#         new_game.away_final_score = game["away_final_score"]
-#         new_game.home = game["home"]
-#         new_game.home_pic = game["home_picture"]
-#         new_game.home_final_score = game["home_final_score"]
-#         new_game.save
-#     end
-#   end
-#   index += 1
-# end
+GAME_INFO
+index = 10
+while index < 13
+  Dir.foreach("./public/games/#{index}") do |file|
+    next if file == "." or file == ".."
+      game_info = File.read("./public/games/#{index}/" + file)
+      sorted_game_info = JSON.parse(game_info)
+      sorted_game_info.each do |game|
+        new_game = Game.new
+        new_game.gamecode = game["gamecode"]
+        new_game.away = game["away"]
+        new_game.away_pic = game["away_picture"]
+        new_game.away_final_score = game["away_final_score"]
+        new_game.home = game["home"]
+        new_game.home_pic = game["home_picture"]
+        new_game.home_final_score = game["home_final_score"]
+        new_game.save
+    end
+  end
+  index += 1
+end
