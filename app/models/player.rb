@@ -67,7 +67,12 @@ class Player < ActiveRecord::Base
       total_fgm += stat.fgm.to_i
       total_fga += stat.fga.to_i
     end
-    ((total_fgm.to_f / total_fga.to_f) * 100).round(2)
+
+    if (total_fgm == 0 && total_fga == 0)
+      return "-"
+    else
+      return "#{((total_fgm.to_f / total_fga.to_f) * 100).round(2)}" + "%"
+    end
   end
 
   def ft_percentage
@@ -77,7 +82,12 @@ class Player < ActiveRecord::Base
       total_ftm += stat.ftm.to_i
       total_fta += stat.fta.to_i
     end
-    ((total_ftm.to_f / total_fta.to_f) * 100).round(2)
+
+    if (total_ftm == 0 && total_fta == 0)
+      return "-"
+    else
+      return "#{((total_ftm.to_f / total_fta.to_f) * 100).round(2)}" + "%"
+    end
   end
 
   def three_percentage
@@ -87,6 +97,11 @@ class Player < ActiveRecord::Base
       total_threepm += stat.threepm.to_i
       total_threepa += stat.threepa.to_i
     end
-    ((total_threepm.to_f / total_threepa.to_f) * 100).round(2)
+
+    if (total_threepm == 0 && total_threepa == 0)
+      return "-"
+    else
+      return "#{((total_threepm.to_f / total_threepa.to_f) * 100).round(2)}" + "%"
+    end
   end
 end
