@@ -11,6 +11,7 @@ class Api::V1::PlayersController < ApiController
     @stats = @player.stats.order(gamecode: :desc)
     gamecode = @stats.all.pluck(:gamecode).uniq
     @games = Game.where(gamecode: gamecode)
+    @games = @games.order(gamecode: :desc)
     @season_average = Hash.new
     @season_average["ppg"] = @player.points_per_game
     @season_average["rpg"] = @player.rebounds_per_game
