@@ -6,21 +6,21 @@ const BoxScore = props => {
   let threep = "";
 
   if (props.boxscore.fgm === "0" && props.boxscore.fga === "0") {
-    fgp = (props.boxscore.fgm / props.boxscore.fga).toFixed(3)
-  } else {
     fgp = "-";
+  } else {
+    fgp = (props.boxscore.fgm / props.boxscore.fga).toFixed(3)
   }
 
   if (props.boxscore.ftm === "0" && props.boxscore.fta === "0") {
-    ftp = (props.boxscore.ftm / props.boxscore.fta).toFixed(3)
-  } else {
     ftp = "-";
+  } else {
+    ftp = (props.boxscore.ftm / props.boxscore.fta).toFixed(3)
   }
 
   if (props.boxscore.threepm === "0" && props.boxscore.threepa === "0") {
-    threep = (props.boxscore.fgm / props.boxscore.fga).toFixed(3)
-  } else {
     threep = "-";
+  } else {
+    threep = (props.boxscore.threepm / props.boxscore.threepa).toFixed(3);
   }
 
   return (
@@ -29,9 +29,9 @@ const BoxScore = props => {
       <td> {props.boxscore.fgm} - {props.boxscore.fga} </td>
       <td> {fgp} </td>
       <td> {props.boxscore.threepm} - {props.boxscore.threepa} </td>
-      <td> {ftp} </td>
-      <td> {props.boxscore.ftm} - {props.boxscore.fta} </td>
       <td> {threep} </td>
+      <td> {props.boxscore.ftm} - {props.boxscore.fta} </td>
+      <td> {ftp} </td>
       <td> {props.boxscore.total_rebound} </td>
       <td> {props.boxscore.assist} </td>
       <td> {props.boxscore.block} </td>
