@@ -4,7 +4,6 @@ const BoxScore = props => {
 
   return (
     <tr>
-      <td> {props.boxscore.gamecode} </td>
       <td> {props.boxscore.min} </td>
       <td> {props.boxscore.fgm} - {props.boxscore.fga} </td>
       <td> {(props.boxscore.fgm / props.boxscore.fga).toFixed(3)} </td>
@@ -17,6 +16,7 @@ const BoxScore = props => {
       <td> {props.boxscore.block} </td>
       <td> {props.boxscore.steal} </td>
       <td> {props.boxscore.turnover} </td>
+      <td> {props.boxscore.plus_minus} </td>
       <td> {props.boxscore.points} </td>
     </tr>
   )

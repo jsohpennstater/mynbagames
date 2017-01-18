@@ -15,6 +15,7 @@ class PlayerContainer extends Component {
        seasonAverage={this.props.seasonAverage}
        playerProfile={this.props.playerProfile}
        playerBoxScore={this.props.playerBoxScore}
+       games={this.props.games}
       />
     )
   }
@@ -25,6 +26,7 @@ const mapStoreToProps = store => {
     seasonAverage: store.seasonAvgState,
     playerProfile: store.playerProfileState,
     playerBoxScore: store.boxScoreState,
+    games: store.allGames,
   }
 }
 

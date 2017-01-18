@@ -1,13 +1,14 @@
 import { combineReducers } from 'redux';
 import { errorReducer, allPlayersReducer} from './PlayerIndexReducers';
-import { seasonAverageReducer, boxScoreReducer, playerProfileReducer  } from './PlayerShowReducers'
+import { seasonAverageReducer, boxScoreReducer, playerProfileReducer, gamesReducer  } from './PlayerShowReducers'
 
 let reducers = combineReducers({
   errorState: errorReducer,
   allPlayers: allPlayersReducer,
   seasonAvgState: seasonAverageReducer,
   boxScoreState: boxScoreReducer,
-  playerProfileState: playerProfileReducer
+  playerProfileState: playerProfileReducer,
+  allGames: gamesReducer
 });
 
 

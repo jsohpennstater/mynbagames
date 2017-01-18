@@ -27,6 +27,16 @@
   justify-content: center;
 }
 
+.team-image {
+  margin: auto;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+  max-width: 100px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
 .player-display p {
   font-size: 13px;
   margin: 0px;
@@ -66,4 +76,20 @@
 
 .season-average th {
   text-align: center;
+}
+
+.game-display {
+  padding: 0px;
+}
+
+.game-display td {
+  padding: 0px
+}
+
+.stat-display {
+  padding: 0px;
+}
+
+.stat-display td {
+  padding-bottom: 15px;
 }

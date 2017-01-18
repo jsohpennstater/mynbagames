@@ -22,8 +22,8 @@ const SeasonAverage = props => {
                 <td> {props.average.ppg} </td>
                 <td> {props.average.rpg} </td>
                 <td> {props.average.apg} </td>
-                <td> {props.average.apg} </td>
-                <td> {props.average.apg} </td>
+                <td> {props.average.spg} </td>
+                <td> {props.average.bpg} </td>
                 <td> {props.average.fgp}% </td>
                 <td> {props.average.ftp}% </td>
                 <td> {props.average.threep}% </td>

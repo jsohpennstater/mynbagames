@@ -24,3 +24,12 @@ export const playerProfileReducer = (state="", action) => {
       return state
   }
 }
+
+export const gamesReducer = (state="", action) => {
+  switch (action.type) {
+    case "PLAYER_GAMES":
+      return action.games
+    default:
+      return state
+  }
+}

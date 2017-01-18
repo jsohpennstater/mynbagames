@@ -9,6 +9,8 @@ class Api::V1::PlayersController < ApiController
   def show
     @player = Player.find_by(id: params[:id])
     @stats = @player.stats.order(gamecode: :desc)
+    gamecode = @stats.all.pluck(:gamecode).uniq
+    @games = Game.where(gamecode: gamecode)
     @season_average = Hash.new
     @season_average["ppg"] = @player.points_per_game
     @season_average["rpg"] = @player.rebounds_per_game
@@ -22,7 +24,8 @@ class Api::V1::PlayersController < ApiController
     render json: {
     player: @player,
     stats: @stats,
-    season_average: @season_average
+    season_average: @season_average,
+    games: @games
     }, status: :ok
   end
 end
