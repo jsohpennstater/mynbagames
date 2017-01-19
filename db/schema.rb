@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170117193835) do
+ActiveRecord::Schema.define(version: 20170119020508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,12 @@ ActiveRecord::Schema.define(version: 20170117193835) do
     t.integer  "player_id",         null: false
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.string   "away",              null: false
+    t.string   "away_pic",          null: false
+    t.string   "away_final_score",  null: false
+    t.string   "home",              null: false
+    t.string   "home_pic",          null: false
+    t.string   "home_final_score",  null: false
     t.index ["player_id"], name: "index_stats_on_player_id", using: :btree
   end
 

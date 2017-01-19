@@ -2,15 +2,11 @@ import React from 'react';
 import SeasonAverage from './SeasonAverage';
 import BoxScore from './BoxScore';
 import PlayerProfile from './PlayerProfile';
-import AllGames from './AllGames';
 
 const PlayerShow = props => {
   let seasonAverage = "";
   let playerProfile = "";
   let boxScore = "";
-  let allGames = "";
-  let displayBoxscore = "";
-  let display = "";
 
   if (props.seasonAverage !== "") {
     seasonAverage =
@@ -26,17 +22,6 @@ const PlayerShow = props => {
       />
   }
 
-  if (props.games !== "") {
-    allGames = props.games.map(Game => {
-      return (
-        <AllGames
-         key={Game.id}
-         game={Game}
-        />
-      )
-    })
-  }
-
   if (props.playerBoxScore !== "") {
     boxScore = props.playerBoxScore.map(Boxscore => {
       return (
@@ -46,12 +31,6 @@ const PlayerShow = props => {
         />
       )
     })
-  }
-
-  if (props.playerBoxScore !== "" && props.games !== "") {
-    for (var i = 0; i < props.playerBoxScore.length; i++) {
-      display += '<p> Yo </p>'
-    }
   }
 
   return (
@@ -65,22 +44,10 @@ const PlayerShow = props => {
       </div>
       <div className="boxscore-table row">
         <p> GAMELOG </p>
-        <div className="small-2 medium-2 columns game-display">
           <table>
             <thead>
               <tr>
                 <th>GAME</th>
-              </tr>
-            </thead>
-            <tbody>
-              {allGames}
-            </tbody>
-          </table>
-        </div>
-        <div className="small-10 medium-10 end columns stat-display">
-          <table>
-            <thead>
-              <tr>
                 <th>MIN</th>
                 <th>FGM - FGA</th>
                 <th>FG%</th>
@@ -100,8 +67,7 @@ const PlayerShow = props => {
             <tbody>
               {boxScore}
             </tbody>
-          </table>
-        </div>
+        </table>
       </div>
     </div>
   )
