@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { NoMatch, AllPlayers, Players, NameMatch} from '../actions/ApiActions'
-import PlayerSearch from '../components/PlayerSearch'
+import PlayerSearch from '../components/Index/PlayerSearch'
 
 class PlayersContainer extends Component {
 

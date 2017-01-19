@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { PlayerInfo, Average, PlayerProfile, BoxScore } from '../actions/ApiActions'
-import PlayerShow from '../components/PlayerShow'
+import PlayerShow from '../components/Show/PlayerShow'
 
 class PlayerContainer extends Component {
 
