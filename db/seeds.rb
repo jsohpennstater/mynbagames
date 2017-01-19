@@ -5,40 +5,53 @@ require 'rubygems'
 require 'json'
 
 # STAT_INFO
-# index = 10
-# while index < 13
-#   Dir.foreach("./public/boxscore/#{index}") do |file|
-#     next if file == "." or file == ".."
-#       game_data = File.read("./public/boxscore/#{index}/" + file)
-#       gamecode = file.chomp('.json')
-#       sorted_game_data = JSON.parse(game_data)
-#       sorted_game_data.each do |game|
-#       current_player = Player.find_by(first_name: game["first_name"], last_name: game["last_name"])
-#       stats = Stat.new
-#       stats.player = current_player
-#       stats.gamecode = game["gamecode"]
-#       stats.position = game["position"]
-#       stats.min = game["min"]
-#       stats.fgm = game["fgm_fga"].split("-")[0]
-#       stats.fga = game["fgm_fga"].split("-")[1]
-#       stats.ftm = game["ftm_fta"].split("-")[0]
-#       stats.fta = game["ftm_fta"].split("-")[1]
-#       stats.threepm = game["threepm_threepa"].split("-")[0]
-#       stats.threepa = game["threepm_threepa"].split("-")[1]
-#       stats.plus_minus = game["plus_minus"]
-#       stats.offensive_rebound = game["offensive_rebound"]
-#       stats.total_rebound = game["total_rebound"]
-#       stats.assist = game["assist"]
-#       stats.block = game["block"]
-#       stats.steal = game["steal"]
-#       stats.turnover = game["turnover"]
-#       stats.personal_foul = game["personal_foul"]
-#       stats.points = game["points"]
-#       stats.save
-#     end
-#   end
-#   index += 1
-# end
+index = 10
+while index < 13
+  Dir.foreach("./public/boxscore/#{index}") do |file|
+    next if file == "." or file == ".."
+      game_data = File.read("./public/boxscore/#{index}/" + file)
+      gamecode = file.chomp('.json')
+      sorted_game_data = JSON.parse(game_data)
+      sorted_game_data.each do |game|
+      current_player = Player.find_by(first_name: game["first_name"], last_name: game["last_name"])
+      stats = Stat.new
+      stats.player = current_player
+      stats.gamecode = game["gamecode"]
+      stats.position = game["position"]
+      stats.min = game["min"]
+      stats.fgm = game["fgm_fga"].split("-")[0]
+      stats.fga = game["fgm_fga"].split("-")[1]
+      stats.ftm = game["ftm_fta"].split("-")[0]
+      stats.fta = game["ftm_fta"].split("-")[1]
+      stats.threepm = game["threepm_threepa"].split("-")[0]
+      stats.threepa = game["threepm_threepa"].split("-")[1]
+      stats.plus_minus = game["plus_minus"]
+      stats.offensive_rebound = game["offensive_rebound"]
+      stats.total_rebound = game["total_rebound"]
+      stats.assist = game["assist"]
+      stats.block = game["block"]
+      stats.steal = game["steal"]
+      stats.turnover = game["turnover"]
+      stats.personal_foul = game["personal_foul"]
+      stats.points = game["points"]
+
+      game_info = File.read("./public/games/#{index}/" + "#{game["gamecode"]}.json")
+        sorted_game_info = JSON.parse(game_info)
+        sorted_game_info.each do |game|
+        stats.gamecode = game["gamecode"]
+        stats.away = game["away"]
+        stats.away_pic = game["away_picture"]
+        stats.away_final_score = game["away_final_score"]
+        stats.home = game["home"]
+        stats.home_pic = game["home_picture"]
+        stats.home_final_score = game["home_final_score"]
+        stats.save
+     end
+
+    end
+  end
+  index += 1
+end
 
 # PLAYER_INFO
 # index = 12

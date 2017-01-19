@@ -77,19 +77,3 @@
 .season-average th {
   text-align: center;
 }
-
-.game-display {
-  padding: 0px;
-}
-
-.game-display td {
-  padding: 0px
-}
-
-.stat-display {
-  padding: 0px;
-}
-
-.stat-display td {
-  padding-bottom: 14px;
-}

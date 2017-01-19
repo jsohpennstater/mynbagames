@@ -4,6 +4,7 @@ const BoxScore = props => {
   let fgp = "";
   let ftp = "";
   let threep = "";
+  let date = props.boxscore.gamecode.slice(4,6) + "/" + props.boxscore.gamecode.slice(6,8);
 
   if (props.boxscore.fgm === "0" && props.boxscore.fga === "0") {
     fgp = "-";
@@ -25,6 +26,11 @@ const BoxScore = props => {
 
   return (
     <tr>
+      <td>
+        <span> <img src= {props.boxscore.away_pic} className="team-image"/> </span>
+        <span> @ <img src= {props.boxscore.home_pic} className="team-image"/> </span>
+        <span> ({date}) </span>
+      </td>
       <td> {props.boxscore.min} </td>
       <td> {props.boxscore.fgm} - {props.boxscore.fga} </td>
       <td> {fgp} </td>
