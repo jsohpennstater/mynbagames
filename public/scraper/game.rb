@@ -7,8 +7,8 @@ require 'json'
 game = File.read("../scraper/team_logos.json")
 sorted_game = JSON.parse(game)
 
-gameday = 20170101
-while gameday <= 20170116
+gameday = 20170117
+while gameday <= 20170123
   doc = Nokogiri::HTML(open("http://scores.nbcsports.com/nba/scoreboard.asp?day=#{gameday}"))
   a = doc.css('a')
   array = []
