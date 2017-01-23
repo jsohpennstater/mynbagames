@@ -5,8 +5,8 @@ require 'rubygems'
 require 'json'
 
 # STAT_INFO
-index = 10
-while index < 13
+index = 1
+while index < 2
   Dir.foreach("./public/boxscore/#{index}") do |file|
     next if file == "." or file == ".."
       game_data = File.read("./public/boxscore/#{index}/" + file)
