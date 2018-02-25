@@ -1,14 +1,14 @@
 require 'open-uri'
 require 'nokogiri'
-require 'pry'
+# require 'pry'
 require 'rubygems'
 require 'json'
 
 game = File.read("../scraper/team_logos.json")
 sorted_game = JSON.parse(game)
 
-gameday = 20170117
-while gameday <= 20170123
+gameday = 20180201
+while gameday <= 20180223
   doc = Nokogiri::HTML(open("http://scores.nbcsports.com/nba/scoreboard.asp?day=#{gameday}"))
   a = doc.css('a')
   array = []
@@ -39,11 +39,10 @@ while gameday <= 20170123
     gameinfo["home_final_score"] = c[5].children[11].children[0].text
     game << gameinfo
 
-    File.open("#{gamecode}.json","w") do |f|
+    File.open("../2017-2018/games/2/#{gamecode}.json","w") do |f|
       f.write(game.to_json)
     end
    end
-
 
 gameday += 1
 end
