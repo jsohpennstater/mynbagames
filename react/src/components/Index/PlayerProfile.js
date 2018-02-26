@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AllPlayers = props => {
+const PlayerProfile = props => {
   let player_id = props.player.id;
   return (
     <div className="player-display col-md-2">
@@ -14,4 +14,4 @@ const AllPlayers = props => {
 
 }
 
-export default AllPlayers;
+export default PlayerProfile;
