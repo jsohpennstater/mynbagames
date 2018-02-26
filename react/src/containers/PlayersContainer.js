@@ -38,6 +38,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(AllPlayers())
     },
     handleNameMatch: (event) => {
+      debugger;
       let name = event.target.value
       dispatch(NameMatch(name))
     }

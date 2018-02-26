@@ -3,6 +3,7 @@ import AllPlayers from './AllPlayers'
 import Names from './Names'
 
 const PlayerSearch = props => {
+  debugger;
   let players = "";
   let names = "";
 
@@ -26,13 +27,22 @@ const PlayerSearch = props => {
   }
 
   return (
-    <div className="row playersearch">
-      <div className="small-12 medium-3 columns">
-        <label htmlFor="firstname">Name Search</label>
-        <input type="text" name="name" onChange ={props.handleNameMatch}/>
-          {names}
+    <div className="players">
+      <div className="playersearch input-group">
+        <div className="input-group col-md-4 mt-3 mb-3 container">
+          <input
+           placeholder="Search Player Name ..."
+           className="form-control"
+           onChange ={props.handleNameMatch}
+          />
+          <button type="submit"
+           className="btn btn-primary"
+          >
+           Search
+          </button>
+        </div>
       </div>
-      <div className="small-12 medium-9 end columns">
+      <div className="matchingPlayers row">
         {players}
       </div>
     </div>

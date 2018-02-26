@@ -1,3 +1,5 @@
+import $ from "jquery";
+
 export const AllPlayers = () => {
   return (dispatch, getState) => {
     let url = '/api/v1/players'
