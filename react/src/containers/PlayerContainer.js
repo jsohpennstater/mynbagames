@@ -4,7 +4,6 @@ import { PlayerInfo, Average, PlayerProfile, BoxScore } from '../actions/ApiActi
 import PlayerShow from '../components/Show/PlayerShow'
 
 class PlayerContainer extends Component {
-
   componentDidMount() {
     this.props.handlePlayerInfo();
   }

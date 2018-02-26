@@ -34,17 +34,17 @@ const PlayerShow = props => {
   }
 
   return (
-    <div className="player-show">
+    <div className="player-show mx-5">
       <div className="row">
        {playerProfile}
       </div>
       <br></br>
-      <div className="season-average row">
+      <div className="season-average">
         {seasonAverage}
       </div>
-      <div className="boxscore-table row">
-        <p> GAMELOG </p>
-          <table>
+      <div className="boxscore-table">
+        <p className="font-weight-bold"> GAMELOG </p>
+          <table className="table table-hover">
             <thead>
               <tr>
                 <th>GAME</th>

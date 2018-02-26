@@ -27,9 +27,11 @@ const BoxScore = props => {
   return (
     <tr>
       <td>
-        <span> <img src= {props.boxscore.away_pic} className="team-image"/> </span>
-        <span> @ <img src= {props.boxscore.home_pic} className="team-image"/> </span>
-        <span> ({date}) </span>
+        <div className="game">
+          <span> <img src= {props.boxscore.away_pic} className="team-image"/> </span>
+          <span> @ <img src= {props.boxscore.home_pic} className="team-image"/> </span>
+          <span> ({date}) </span>
+        </div>
       </td>
       <td> {props.boxscore.min} </td>
       <td> {props.boxscore.fgm} - {props.boxscore.fga} </td>
