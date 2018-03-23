@@ -15,6 +15,7 @@ gem 'foundation-rails'
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 gem 'cloudinary'
 gem 'pry'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   gem 'capybara'
